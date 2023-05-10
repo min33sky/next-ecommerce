@@ -7,3 +7,10 @@
     height: 100%;
   }
 }
+
+@layer components {
+  .button {
+    @apply border px-5 md:px-10 py-2.5 rounded-lg font-semibold transition duration-200 ease-out
+  }
+}
+
