@@ -8,7 +8,9 @@ export default function Header() {
       }
     >
       <Link href={"/"}>
-        <p className={`text-lg font-extrabold italic`}>NextShop</p>
+        <p className={`text-lg font-extrabold italic text-slate-800`}>
+          NextShop
+        </p>
       </Link>
 
       <div className={"flex items-center space-x-2.5 text-sm"}>
