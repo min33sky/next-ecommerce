@@ -1,6 +1,6 @@
 import ProductImage from "@/components/ProductImage";
 import { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: {
