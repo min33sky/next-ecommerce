@@ -2,6 +2,8 @@ import ProductImage from "@/components/ProductImage";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+export const revalidate = 3600;
+
 interface Props {
   params: {
     id: string;
@@ -25,6 +27,15 @@ export async function generateMetadata({
       title: `Product Not Found | NextShop`,
     };
   }
+}
+
+export async function generateStaticParams() {
+  const res = await fetch(`https://fakestoreapi.com/products`);
+  const products: Product[] = await res.json();
+
+  return products.map((product) => ({
+    id: product.id.toString(),
+  }));
 }
 
 export default async function ProductDetailPage({ params: { id } }: Props) {
